@@ -146,7 +146,7 @@ public class TileEMPTower extends TileICBM implements IMultiBlock, IRedstoneRece
     {
         if (this.getEnergyHandler().isFull())
         {
-        	if(inCurrentCooldown()) {
+        	if(!inCurrentCooldown()) {
 	            switch (this.empMode)
 	            {
 	                default:
