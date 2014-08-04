@@ -463,8 +463,8 @@ public class TileRadarStation extends TileFrequency implements IChunkLoadHandler
                 return true;
             }
         }
-
-        entityPlayer.openGui(ICBMExplosion.instance, 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+        if(!this.worldObj.isRemote)
+        	entityPlayer.openGui(ICBMExplosion.instance, 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
         return true;
     }
 

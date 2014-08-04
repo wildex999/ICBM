@@ -442,7 +442,8 @@ public class TileCruiseLauncher extends TileLauncherPrefab implements IBlockActi
             return true;
         }
 
-        player.openGui(ICBMExplosion.instance, 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+        if(!this.worldObj.isRemote)
+        	player.openGui(ICBMExplosion.instance, 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
         return true;
     }
 
