@@ -32,7 +32,7 @@ public class GuiUserAccess extends GuiContainerBase implements IScroll
     /** Current user page displayed */
     private int currentPage = 0;
     /** Limit page number that can be scrolled to */
-    private int pageLimit = 0;
+    private int pageLimit = 10;
     /** Current tile being accessed */
     public TileEntity tileEntity;
     /** Player accessing the gui */
