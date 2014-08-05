@@ -11,8 +11,10 @@ import java.io.IOException;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import resonant.api.IRedstoneReceptor;
+import resonant.api.map.IRadarDetectable;
 import resonant.api.map.RadarRegistry;
 import resonant.lib.multiblock.IBlockActivate;
 import resonant.lib.multiblock.IMultiBlock;
@@ -21,7 +23,7 @@ import universalelectricity.api.vector.Vector3;
 
 import com.google.common.io.ByteArrayDataInput;
 
-public class TileEMPTower extends TileICBM implements IMultiBlock, IRedstoneReceptor, IBlockActivate
+public class TileEMPTower extends TileICBM implements IMultiBlock, IRedstoneReceptor, IBlockActivate, IRadarDetectable
 {
     // The maximum possible radius for the EMP to strike
     public static final int MAX_RADIUS = 150;
@@ -188,5 +190,14 @@ public class TileEMPTower extends TileICBM implements IMultiBlock, IRedstoneRece
     {
         return INFINITE_EXTENT_AABB;
     }
+
+	@Override
+	public boolean canDetect(TileEntity arg0) {
+		if(this.getEnergyHandler().isFull())
+		{
+			return true;
+		}
+		return false;
+	}
 
 }
