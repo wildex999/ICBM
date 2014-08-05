@@ -91,7 +91,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = ICBMExplosion.ID, name = ICBMExplosion.NAME, version = Reference.VERSION, dependencies = "required-after:ICBM;after:ICBM|Sentry")
-@NetworkMod(channels = ICBMExplosion.CHANNEL, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+@NetworkMod(channels = ICBMExplosion.CHANNEL, clientSideRequired = true, serverSideRequired = true, packetHandler = PacketHandler.class)
 public class ICBMExplosion
 {
     public static final String NAME = Reference.NAME + " Explosion";
