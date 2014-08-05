@@ -70,7 +70,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
  * 
  * @author Calclavia */
 @Mod(modid = Reference.NAME, name = Reference.NAME, version = Reference.VERSION, dependencies = "after:AtomicScience;required-after:ResonantEngine")
-@NetworkMod(channels = Reference.CHANNEL, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+@NetworkMod(channels = Reference.CHANNEL, clientSideRequired = true, serverSideRequired = true, packetHandler = PacketHandler.class)
 @ModstatInfo(prefix = "icbm", name = Reference.NAME, version = Reference.VERSION)
 public final class ICBMCore
 {
@@ -111,7 +111,7 @@ public final class ICBMCore
     public void preInit(FMLPreInitializationEvent event)
     {
         NetworkRegistry.instance().registerGuiHandler(this, proxy);
-
+        
         Modstats.instance().getReporter().registerMod(INSTANCE);
         MinecraftForge.EVENT_BUS.register(INSTANCE);
 
