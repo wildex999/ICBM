@@ -532,6 +532,8 @@ public class TileCruiseLauncher extends TileLauncherPrefab implements IBlockActi
     @Override
     public boolean equals(IPeripheral other)
     {
-        return equals(other);
+    	//Still not sure what the purpose of this method is
+    	//so we just do a reference comparison
+        return this == other;
     }
 }
