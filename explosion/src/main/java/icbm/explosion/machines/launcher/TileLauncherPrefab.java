@@ -155,6 +155,7 @@ public abstract class TileLauncherPrefab extends TileFrequency implements ILaunc
     @Override
     public boolean equals(IPeripheral other)
     {
+    	//More correct would be to use super.equals(other), as it should avoid StackOverflow too.
     	//Still not sure what the purpose of this method is
     	//so we just do a reference comparison
         return this == other;
